@@ -10,26 +10,33 @@ function Stations(props){
 	//   { name: 'Classical' }
 	// ];
 
-	const stationsData = Object.keys(props.stations);
+	// stations:
+	// {
+	//	Ambient: [songobj1,songobj2]
+	// 	Rock: [songobj1,songobj2]
+// }
 
-	console.log("stations props is", props);
+	const stationsData = Object.keys(props.stations);
+	// [Ambient, Rock]
+
+	// console.log("stations props is", props);
 	return (
 
 		    <div>
 		      <h3>Stations</h3>
 		      <div className="list-group">
 		      {
-		        stationsData.map(station => {
+		        stationsData.map(stationName => {
 		          return (
-		            <div className="list-group-item" key={station}>
-		              <Link to={'fill/me/in/later'}>{station}</Link>
+		            <div className="list-group-item" key={stationName}>
+		              <Link to={`/stations/${stationName}`}>{stationName}</Link>
 		            </div>
 		          );
 		        })
 		      }
 		      </div>
 		    </div>
-	
+
 
 	)
 
